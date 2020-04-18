@@ -66,7 +66,7 @@ document.addEventListener('pjax:complete', function(){
 setp = function() {
  var sep = document.getElementById('moe-setting');
  if(getComputedStyle) {
-  var compStyle = document.defaultView.getComputedStyle(setp, false);
+  var compStyle = document.defaultView.getComputedStyle(sep, false);
   var getDisplay = compStyle['display'];
  }else{
   var comstyle=div.currentStyle;

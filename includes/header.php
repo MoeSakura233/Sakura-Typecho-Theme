@@ -35,8 +35,8 @@ Theme by sakura.
 				<div class="moe-title"><?php $this->options->title(); ?><br><span><?php $this->options->description() ?></span></div>
               	<div class="moe-an" onclick="setp();"><img src="https://s1.ax1x.com/2020/04/13/GvYvKH.png"></div>
 				    <div align="left" style="float:left">
-    					<a href="<?php $this->options ->siteUrl(); ?>/links.html" class="moe-alink"> 友情链接</a>
+    					<a href="<?php $this->options ->siteUrl(); ?>links.html" class="moe-alink"> 友情链接</a>
 					</div>
 					<div align="right">
-    					<a href="<?php $this->options ->siteUrl(); ?>/about.html" class="moe-alink"> 关于本站</a>
+    					<a href="<?php $this->options ->siteUrl(); ?>about.html" class="moe-alink"> 关于本站</a>
 					</div>
