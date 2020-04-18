@@ -1,0 +1,1065 @@
+@charset "UTF-8";
+/**
+ * O's API - Style
+ * By ohmyga 2019/07/16
+ * https://ohmyga.cn | https://github.com/ohmyga233
+ **/
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  display: flex; 
+  flex-flow: column; 
+  min-height: 100vh;
+  font-family: "Roboto";
+}
+
+.moe-text {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.moe-img {
+	width: 100%;
+	border-radius: 5px;
+	box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+	-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)
+}
+
+.moe-audio {
+	width: 100%;
+	margin-top: 10px;
+}
+
+/* 夜间模式 */
+.moe-dark .moe-bg:after {
+  transition: all 0.3s;
+  background-color: rgba(0,0,0,.8);
+}
+
+.moe-dark #moe-body .moe-title {
+  color: #fff;
+}
+
+.moe-dark #moe-apps {
+  color: #fff;
+}
+
+.moe-dark #moe-body i {
+  color: #fff;
+}
+
+.moe-dark #moe-body .moe-alink{
+  color: #fff;
+}
+
+.moe-dark #moe-setting {
+  background-color: #424242;
+}
+
+.moe-dark #moe-setting .moe-setting-title:after {
+  background-color: #fff;
+}
+
+.moe-dark #moe-setting::before {
+  border-color: #424242 #424242 transparent transparent;
+}
+
+.moe-dark #moe-foot .moe-foot-copy {
+  color: #fff;
+}
+
+.moe-dark .moe-table {
+  background-color: #424242;
+}
+
+.moe-dark .moe-table tr,
+.moe-dark .moe-table td,
+.moe-dark .moe-table th {
+  color: #fff;
+}
+
+.moe-dark .moe-table-hoverable tbody tr:hover {
+  background-color: #757575;
+}
+
+.moe-dark .moe-404-card,
+.moe-dark .moe-520-card,
+.moe-dark .moe-500-card {
+  background-color: #424242;
+}
+
+.moe-dark .moe-404-title,
+.moe-dark .moe-404-text,
+.moe-dark .moe-404-alink,
+.moe-dark .moe-520-title,
+.moe-dark .moe-520-text,
+.moe-dark .moe-520-alink,
+.moe-dark .moe-500-title,
+.moe-dark .moe-500-text,
+.moe-dark .moe-500-alink {
+  color: #fff;
+}
+
+.moe-dark .moe-404-text del {
+  color: #E0E0E0;
+  background-color: #E0E0E0;
+}
+
+.moe-dark .moe-404-card #moe-setting,
+.moe-dark .moe-520-card #moe-setting,
+.moe-dark .moe-500-card #moe-setting {
+  box-shadow: 0 3px 1px -2px rgba(225,225,225,.2), 0 2px 2px 0 rgba(225,225,225,.14), 0 1px 5px 0 rgba(225,225,225,.12);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(225,225,225,.2), 0 2px 2px 0 rgba(225,225,225,.14), 0 1px 5px 0 rgba(225,225,225,.12);
+}
+
+.moe-dark .moe-404-card #moe-setting::before,
+.moe-dark .moe-520-card #moe-setting::before,
+.moe-dark .moe-500-card #moe-setting::before {
+  box-shadow: 2px -2px 0 rgba(225,225,225,.1);
+}
+
+.moe-dark .moe-hr {
+  background-color: rgba(225,225,225,.6);
+}
+
+/* Pjax加载动画 */
+.moe-pjax-loading {
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateY(49px)!important;
+}
+
+.moe-pjax-loaded {
+  opacity: 1;
+  transition: all 0.3s;
+  transform: translateY(0)!important;
+}
+
+.moe-bg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+
+.moe-bg:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  z-index: -1;
+  position: fixed;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,.9);
+}
+
+/* 连缀 */
+.moe-ripple {
+  overflow: hidden;
+  position: relative;
+}
+
+.moe-ripple:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  transform: scale(10, 10);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: transform 0.3s, opacity 0.5s;
+  background-image: radial-gradient(circle, #666 10%, transparent 10.01%);   
+}
+
+.moe-ripple:active:after {
+  opacity: .5;
+  transition: 0s;
+  transform: scale(0, 0);
+}
+
+/* Hr */
+.moe-hr {
+  height: 1px;
+  border: none;
+  margin: 6 0 6 0;
+  background-color: rgba(0,0,0,.12);
+}
+
+/* 按钮开关 */
+.moe-obut {
+  display: none;
+}
+
+.moe-obut-label {
+  width: 30px;
+  height: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  display: inline-block;
+  background-color: #bdbdbd;
+  box-shadow: #ccc 0px 0px 0px 1px;
+}
+
+.moe-obut-label:before {
+  left: 0;
+  width: 15px;
+  content: '';
+  z-index: 20;
+  height: 15px;
+  position: absolute;
+  border-radius: 20px;
+  transition: all 0.3s;
+  display: inline-block;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+}
+
+.moe-obut-label-on:before {
+  left: 16px;
+}
+
+.moe-obut-label-on {
+  background-color: #448AFF;
+}
+
+.moe-obut-label-off:before {
+  left: 0px!important;
+}
+
+.moe-obut-label-off {
+  background-color: #bdbdbd!important;
+}
+
+.moe-obut:checked + label.moe-obut-label:before {
+  left: 16px;
+}
+
+.moe-obut:checked + label.moe-obut-label {
+  background-color: #448AFF;
+}
+
+#moe-apps {
+  flex: 1;
+  width: auto;
+  height: auto;
+}
+
+#moe-body {
+  width: 600px;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* 链接样式 */
+#moe-body a:not(.moe-alink) {
+  color: #448AFF;
+  position: relative;
+  text-decoration: none;
+}
+
+#moe-body a:not(.moe-alink):before {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  transform: scaleX(0);
+  background-color: #448AFF;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+
+#moe-body a:not(.moe-alink):hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 按钮样式 */
+.moe-btn {
+  z-index: 1;
+  color: white;
+  border: none;
+  outline: none;
+  position: relative;
+  font-size: inherit;
+  padding: 0.5em 1em;
+  border-radius: 7px;
+  font-family: inherit;
+}
+
+.moe-btn::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  z-index: -1;
+  position: absolute;
+  border-radius: 7px;
+  transform: scaleX(0);
+  background-color: #fc2f70;
+  transform-origin: center right;
+  transition: transform 0.25s ease-in-out;
+}
+
+.moe-btn:hover {
+  cursor: pointer;
+}
+
+.moe-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: center left;
+}
+
+/* 表格 */
+.moe-table-fluid {
+  width: 100%;
+  overflow-x: auto;
+  border-top: none;
+  border-radius: 3px;
+  border-bottom: none;
+  border: 1px solid rgba(0,0,0,.12);
+  -webkit-overflow-scrolling: touch;
+  
+}
+
+.moe-table {
+  margin: 0;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  border-spacing: 0;
+  position: relative;
+  transition: all 0.3s;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  border-collapse: separate;
+}
+
+.moe-table-hoverable tbody tr {
+  position: relative;
+  transition: background-color .28s cubic-bezier(.4,0,.2,1);
+  -webkit-transition: background-color .28s cubic-bezier(.4,0,.2,1);
+}
+
+.moe-table-hoverable tbody tr:hover {
+  background-color: #E0E0E0;
+}
+
+.moe-table td,
+.moe-table th {
+  text-align: left;
+  position: relative;
+  padding: 12px 28px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.moe-table th:last-child,
+.moe-table td:last-child {
+  padding-right: 24px;
+}
+
+.moe-table th:first-child,
+.moe-table td:first-child {
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.moe-table th:nth-child(2),
+.moe-table td:nth-child(2) {
+  padding-left: 24px;
+}
+
+.moe-table th {
+  font-size: 13px;
+  overflow: hidden;
+  font-weight: 700;
+  line-height: 32px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.moe-table td {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, .87);
+}
+
+/* Gravatar */
+.moe-gravatar-img {
+  width: 36px;
+  border-radius: 50%;
+}
+
+/* code */
+code:not(.hljs) {
+  font-size: 1em;
+  color: #c7254e;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background-color: #f7f7f9;
+  font-family: Consolas,Courier,'Courier New',monospace!important;
+}
+
+.hljs {
+  width: auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+/* 康娜 */
+#moe-body .moe-kn {
+  top: -13px;
+  right: 10px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn img {
+  width: 100px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn:hover {
+  top: -32px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn:hover img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn1 {
+  top: -43px;
+  right: 10px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn1 img {
+  width: 100px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn1:hover {
+  top: -55px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-kn1:hover img {
+  width: 110px;
+  transition: all 0.3s;
+}
+
+/* Amashiro NatsukiEars */
+#moe-body .moe-an {
+  top: -8px;
+  right: 10px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-an img {
+  width: 100px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-an:hover {
+  top: -27px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-an:hover img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+.moe-setting-open {
+  opacity: 1!important;
+  transition: all 0.3s!important;
+  transform: translateY(0px)!important;
+}
+
+/* 雀魂 */
+#moe-body .moe-mj {
+  top: -12px;
+  right: 10px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-mj img {
+  width: 100px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-mj:hover {
+  top: -31px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-mj:hover img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+.moe-setting-open {
+  opacity: 1!important;
+  transition: all 0.3s!important;
+  transform: translateY(0px)!important;
+}
+
+#moe-setting {
+  top: 105px;
+  opacity: 0;
+  right: 10px;
+  width: 140px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  border-radius: 7px;
+  transition: all 0.3s;
+  background-color: #f5f5f5;
+  transform: translateY(50px);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#moe-setting::before {
+  width: 0;
+  right: 20px;
+  height: 0;
+  top: -10px;
+  content: '';
+  display: block;
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  transform: rotate(-45deg);
+  box-shadow: 2px -2px 0 rgba(0,0,0,.1);
+  border-color: #f5f5f5 #f5f5f5 transparent transparent;
+}
+
+#moe-setting .moe-setting-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#moe-setting .moe-setting-title:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: block;
+  margin-top: 2px;
+  margin-left: -10px;
+  position: absolute;
+  background-color: #000;
+}
+
+#moe-setting .moe-setting-list {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#moe-setting .moe-setting-btn {
+  float: right;
+  margin-top: 3px;
+  vertical-align: middle;
+}
+
+#moe-body .moe-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 550;
+}
+
+#moe-body .moe-title span {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+#moe-body .moe-h2 {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+#moe-body .moe-h2:before {
+  content: '#';
+  color: #2196F3;
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 5px; 
+}
+
+#moe-body .moe-h3 {
+  margin: 0;
+  margin-top: 5px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#moe-body .moe-h3:before {
+  content: '▋';
+  color: #2196F3;
+  font-size: 15px;
+  font-weight: bold;
+  padding-right: 5px; 
+}
+
+#moe-body .moe-alink {
+  color: #000;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.1s;
+  text-decoration: none;
+}
+
+#moe-body .moe-alink .moe-icon {
+  font-size: 18px;
+  padding-right: 10px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-alink .i-qq {
+  color: #2196F3;
+}
+
+#moe-body .moe-alink .i-pixiv {
+  color: #0097FA;
+}
+
+#moe-body .moe-alink .i-gravatar {
+  color: #1565C0;
+}
+
+#moe-body .moe-alink .i-talk {
+  color: #536DFE;
+}
+
+#moe-body .moe-alink .i-music {
+  color: #009688;
+}
+
+#moe-body .moe-alink .i-heart {
+  color: #E53935;
+}
+
+#moe-body .moe-alink .i-info {
+  color: #673AB7;
+}
+
+#moe-body .moe-alink .i-status {
+  color: #E91E63;
+}
+
+#moe-body .moe-alink .i-back {
+  font-weight: 600;
+}
+
+#moe-body .moe-alink .moe-headimg img {
+  width: 18px;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-alink:hover i {
+  font-size: 25px;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-alink:hover img {
+  width: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+#moe-body .moe-alink:hover {
+  font-weight: 550;
+  transition: all 0.1s;
+}
+
+@media (max-width: 610px) {
+ #moe-body {
+  width: 93%;
+ }
+ 
+ #moe-body .moe-title {
+  font-size: 30px;
+ }
+ 
+ #moe-body .moe-title span {
+  font-size: 18px;
+  font-weight: 550;
+ }
+ 
+ #moe-body .moe-kn {
+  top: -28.5px;
+ }
+ 
+ #moe-body .moe-kn:hover {
+  top: -47px;
+ }
+ 
+ #moe-body .moe-kn1 {
+  top: -58px;
+ }
+ 
+ #moe-body .moe-kn1:hover {
+  top: -70px;
+ }
+ 
+ #moe-body .moe-an {
+  top: -23px;
+ }
+ 
+ #moe-body .moe-an:hover {
+  top: -42px;
+ }
+}
+
+/* 404 */
+#moe-404 {
+  position: absolute;
+  top: calc(50% - 85px);
+  left: calc(50% - 165px);
+}
+
+.moe-404-card {
+  width: 300px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)
+}
+
+.moe-404-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 550;
+}
+
+.moe-404-text {
+  color: #000;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.moe-404-text del {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 3px;
+  transition: all 0.3s;
+  text-decoration: none;
+  background-color: #000;
+}
+
+.moe-404-text del:hover {
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.moe-404-card .moe-404-an {
+  top: -112px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+  left: calc(50% - 60px);
+}
+
+.moe-404-card .moe-404-an img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+.moe-404-card .moe-404-an:hover {
+  top: -122px;
+  left: calc(50% - 65px);
+  transition: all 0.3s;
+}
+
+.moe-404-card .moe-404-an img:hover {
+  width: 130px;
+  transition: all 0.3s;
+}
+
+.moe-404-alink {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.moe-404-alink:hover {
+  font-weight: 550;
+  transition: all 0.1s;
+}
+
+.moe-404-alink:hover i {
+  font-size: 25px;
+  transition: all 0.3s;
+}
+
+.moe-404-card #moe-setting {
+  top: 20px!important;
+  left: calc(50% - 80px)!important;
+}
+
+.moe-404-card #moe-setting::before {
+  right: calc(50% - 14.14px)!important;
+}
+
+.moe-404-card #moe-setting div {
+  text-align: left;
+}
+
+/* 500 */
+#moe-500 {
+  position: absolute;
+  top: calc(50% - 85px);
+  left: calc(50% - 165px);
+}
+
+.moe-500-card {
+  width: 300px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)
+}
+
+.moe-500-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 550;
+}
+
+.moe-500-text {
+  color: #000;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.moe-500-card .moe-500-mj {
+  top: -112px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+  left: calc(50% - 50px);
+}
+
+.moe-500-card .moe-500-mj img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+.moe-500-card .moe-500-mj:hover {
+  top: -121px;
+  left: calc(50% - 55px);
+  transition: all 0.3s;
+}
+
+.moe-500-card .moe-500-mj img:hover {
+  width: 130px;
+  transition: all 0.3s;
+}
+
+.moe-500-alink {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.moe-500-alink:hover {
+  font-weight: 550;
+  transition: all 0.1s;
+}
+
+.moe-500-alink:hover i {
+  font-size: 25px;
+  transition: all 0.3s;
+}
+
+.moe-500-card #moe-setting {
+  top: 20px!important;
+  left: calc(50% - 80px)!important;
+}
+
+.moe-500-card #moe-setting::before {
+  right: calc(50% - 14.14px)!important;
+}
+
+.moe-500-card #moe-setting div {
+  text-align: left;
+}
+
+/* 520 */
+#moe-520 {
+  position: absolute;
+  top: calc(50% - 107px);
+  left: calc(50% - 165px);
+}
+
+.moe-520-card {
+  width: 300px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)
+}
+
+.moe-520-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 550;
+}
+
+.moe-520-text {
+  color: #000;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.moe-520-text span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.moe-520-card .moe-520-xl {
+  top: -120px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+  left: calc(50% - 60px);
+}
+
+.moe-520-card .moe-520-xl img {
+  width: 120px;
+  transition: all 0.3s;
+}
+
+.moe-520-card .moe-520-xl:hover {
+  top: -130px;
+  left: calc(50% - 65px);
+  transition: all 0.3s;
+}
+
+.moe-520-card .moe-520-xl img:hover {
+  width: 130px;
+  transition: all 0.3s;
+}
+
+.moe-520-alink {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.moe-520-alink:hover {
+  font-weight: 550;
+  transition: all 0.1s;
+}
+
+.moe-520-alink:hover i {
+  font-size: 25px;
+  transition: all 0.3s;
+}
+
+.moe-520-card #moe-setting {
+  top: 20px!important;
+  left: calc(50% - 80px)!important;
+}
+
+.moe-520-card #moe-setting::before {
+  right: calc(50% - 14.14px)!important;
+}
+
+.moe-520-card #moe-setting div {
+  text-align: left;
+}
+
+/* Footer */
+#moe-foot {
+  flex: 0;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+}
+
+#moe-foot .moe-foot-copy {
+  font-weight: 500;
+}
+
+#moe-foot .moe-foot-copy a {
+  color: #448AFF;
+  text-decoration: none;
+}
+
+html::-webkit-scrollbar-track-piece{
+  background: rgba(0, 0, 0, 0);
+}
+
+html::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+
+html::-webkit-scrollbar-thumb{
+  height: 40px;
+  border-radius: 4px;
+  background-color: rgba(165, 165, 165, 1);
+}
+
+html::-webkit-scrollbar-thumb:hover{
+  background-color: #bbb;
+}
