@@ -18,5 +18,7 @@
         <script src="<?php $this->options->themeUrl('others/js/nprogress.min.js'); ?>"></script> 
 		<script src="<?php $this->options->themeUrl('others/js/moe.js'); ?>"></script>
         <script>checkBtn();</script>
+		<!-- 通过自有函数输出HTML足部信息 -->
+		<?php $this->footer(); ?>
 	</body>
 </html>
