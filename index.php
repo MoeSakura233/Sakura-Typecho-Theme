@@ -14,7 +14,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 <div class="col-mb-12 col-8" id="main" role="main">
 	<?php while($this->next()): ?>
-        <a href="<?php $this->permalink() ?>" class="moe-alink"><i class="moe-icon moe-headimg"><img src="https://q1.qlogo.cn/g?b=qq&nk=928338616&s=640"></i> <?php $this->title() ?></a>
+        <a href="<?php $this->permalink() ?>" class="moe-alink"><i class="moe-icon moeicon i-talk"></i> <?php $this->title() ?></a>
 	<?php endwhile; ?>
 
     <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
