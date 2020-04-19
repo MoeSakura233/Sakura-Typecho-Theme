@@ -1,4 +1,10 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+   <div class="mdui-card moe-comment-card" id="comment-card-box">
+    <div class="moe-comment-card-close">
+     <i class="mdui-icon material-icons">&#xe5cd;</i>
+     评论我没整。
+    </div>
+   </div>
 <!--div id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if ($comments->have()): ?>
